@@ -397,6 +397,7 @@
                         return false;
                     }
                     scope.date = date;
+                    scope.model = date;
                     scope.setView("date");
                 };
 
