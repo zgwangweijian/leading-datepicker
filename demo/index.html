@@ -90,7 +90,7 @@
     var datepickerTest = angular.module("datepickerTest", ["ldDatePicker"]);
     datepickerTest.controller("DatepickerTestController", ["$scope", function ($scope) {
         $scope.condition = {
-            startTime: undefined,
+            startTime: moment().startOf('month'),
             endTime: undefined
         };
     }]);
