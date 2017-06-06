@@ -1,7 +1,7 @@
 /*!
  * leading-datepicker
  * 
- * Version: 1.0.1 - 2016-12-05T06:50:37.877Z
+ * Version: 1.0.2 - 2017-06-06T02:13:32.234Z
  * License: 
  */
 
@@ -405,6 +405,7 @@
                         return false;
                     }
                     scope.date = date;
+                    scope.model = date;
                     scope.setView("date");
                 };
 
