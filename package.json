@@ -1,8 +1,8 @@
 {
   "name": "leading-datepicker",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "repository": {
-    "url": "https://github.com/zgwangweijian/leadingDatepicker.git"
+    "url": "https://github.com/zgwangweijian/leading-datepicker.git"
   },
   "dependencies": {},
   "devDependencies": {

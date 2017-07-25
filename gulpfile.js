@@ -48,7 +48,7 @@ gulp.task('stylesheet', function () {
         .pipe(plumber({
             errorHandler: handleError
         }))
-        .pipe(concat('ld-datepicker.css'))
+        .pipe(concat('leading-datepicker.css'))
         .pipe(header(config.banner, {
             timestamp: (new Date()).toISOString(), pkg: config.pkg
         }))
@@ -72,7 +72,7 @@ gulp.task('scripts', function () {
         .pipe(plumber({
             errorHandler: handleError
         }))
-        .pipe(concat('ld-datepicker.js'))
+        .pipe(concat('leading-datepicker.js'))
         .pipe(header(config.banner, {
             timestamp: (new Date()).toISOString(), pkg: config.pkg
         }))

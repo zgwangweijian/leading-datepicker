@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
-    <link href="../src/ld-datepicker.css" rel="stylesheet" type="text/css"/>
+    <link href="../src/leading-datepicker.css" rel="stylesheet" type="text/css"/>
     <link href="//cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
@@ -12,7 +12,7 @@
     <script src="//code.angularjs.org/1.2.32/angular.min.js" type="text/javascript"></script>
     <script src="//cdn.bootcss.com/moment.js/2.15.2/moment-with-locales.min.js"></script>
     <script src="//cdn.bootcss.com/moment-timezone/0.5.7/moment-timezone-with-data.min.js"></script>
-    <script src="../src/ld-datepicker.js" type="text/javascript"></script>
+    <script src="../src/leading-datepicker.js" type="text/javascript"></script>
 </head>
 <body data-ng-app="datepickerTest">
 <div data-ng-controller="DatepickerTestController" style="height: 800px;">
@@ -87,7 +87,7 @@
 
 <script>
     moment.locale("zh-cn");
-    var datepickerTest = angular.module("datepickerTest", ["ldDatePicker"]);
+    var datepickerTest = angular.module("datepickerTest", ["leading.datePicker"]);
     datepickerTest.controller("DatepickerTestController", ["$scope", function ($scope) {
         $scope.condition = {
             startTime: moment().startOf('month'),
