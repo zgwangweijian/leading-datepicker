@@ -30,7 +30,7 @@
                                 <div date-time-append class="input-group">
                                     <input id="minDate" name="minDate" class="form-control"
                                            placeholder="最小日期" ng-model="condition.startTime"
-                                           date-time format="YYYY-MM-DD HH:mm" max-view="year" min-view="minutes" view="date"
+                                           date-time format="YYYY-MM-DD" max-view="year" min-view="date" view="date"
                                            auto-close="true" max-date="condition.endTime"/>
                                     <span class="input-group-btn">
                                         <button class="btn default" type="button">
@@ -59,7 +59,7 @@
                                 <div date-time-append class="input-group">
                                     <input id="maxDate" name="maxDate" class="form-control"
                                            placeholder="最大日期" ng-model="condition.endTime"
-                                           date-time format="YYYY-MM-DD HH:mm" max-view="year" min-view="minutes" view="date"
+                                           date-time format="YYYY-MM-DD" max-view="year" min-view="date" view="date"
                                            auto-close="true" min-date="condition.startTime"/>
                                     <span class="input-group-btn">
                                         <button class="btn default" type="button">
@@ -90,8 +90,8 @@
     var datepickerTest = angular.module("datepickerTest", ["leading.datePicker"]);
     datepickerTest.controller("DatepickerTestController", ["$scope", function ($scope) {
         $scope.condition = {
-            startTime: moment().startOf('month'),
-            endTime: undefined
+            startTime: moment().startOf('day'),
+            endTime: moment().add(1,'day').startOf('day')
         };
     }]);
 </script>

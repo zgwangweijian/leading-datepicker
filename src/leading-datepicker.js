@@ -386,19 +386,23 @@
                 };
 
                 scope.selectNonMonthDate = function (date) {
-                    if (attrs.disabled) {
-                        return false;
+                    if(!attrs.otherMonth){
+                        scope.selectDate(date);
+                    }else{
+                        if (attrs.disabled) {
+                            return false;
+                        }
+                        if (isSame(scope.date, date)) {
+                            date = scope.date;
+                        }
+                        date = clipDate(date);
+                        if (!date) {
+                            return false;
+                        }
+                        scope.date = date;
+                        scope.model = date;
+                        scope.setView("date");
                     }
-                    if (isSame(scope.date, date)) {
-                        date = scope.date;
-                    }
-                    date = clipDate(date);
-                    if (!date) {
-                        return false;
-                    }
-                    scope.date = date;
-                    scope.model = date;
-                    scope.setView("date");
                 };
 
                 scope.selectDate = function (date) {
@@ -980,6 +984,9 @@
                 }
 
                 element.bind('focus', showPicker);
+                element.bind('click', function () {
+                    element.focus();
+                });
                 element.bind('blur', clear);
                 getTemplate();
             }
@@ -1040,7 +1047,7 @@
             "\n" +
             "<li class=\"prev\" ng-click=\"prev()\"><i>&lsaquo;</i></li>\r" +
             "\n" +
-            "<li class=\"current\" ng-click=\"setView('month')\" ng-bind=\"date|mFormat:'MMMM YYYY':tz\"></li>\r" +
+            "<li class=\"current\"><span ng-click=\"setView('month')\" ng-bind=\"date|mFormat:'MMMM':tz\"></span>&nbsp;&nbsp;<span ng-click=\"setView('year')\" ng-bind=\"date|mFormat:'YYYY':tz\"></span></li>\r" +
             "\n" +
             "<li class=\"next\" ng-click=\"next()\"><i>&rsaquo;</i></li>\r" +
             "\n" +
